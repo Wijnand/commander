@@ -1,0 +1,1 @@
+Very simple daemon that pulls a RESTful url for commands it should run and posts back the result.

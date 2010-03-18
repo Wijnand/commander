@@ -1,0 +1,14 @@
+defaults: &defaults
+  user: agent
+  pass: testing
+  url: http://localhost:3000/
+  interval: 1
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

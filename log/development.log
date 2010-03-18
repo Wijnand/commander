@@ -1,0 +1,44 @@
+# Logfile created on 2010-03-18 21:00:27 +0100 by logger.rb/20321
+2010-03-18 21:00:27.807705 commander(76979) [INFO] initializer.rb:180: DaemonKit (0.1.7.12) booting in development mode
+2010-03-18 21:00:27.820597 commander(76979) [INFO] initializer.rb:372: Setting up trap for USR1
+2010-03-18 21:00:27.822334 commander(76979) [INFO] initializer.rb:372: Setting up trap for USR2
+2010-03-18 21:00:27.824003 commander(76979) [INFO] initializer.rb:372: Setting up trap for HUP
+2010-03-18 21:00:27.826101 commander(76979) [INFO] initializer.rb:372: Setting up trap for INT
+2010-03-18 21:00:27.829591 commander(76979) [INFO] initializer.rb:372: Setting up trap for TERM
+2010-03-18 21:00:27.833419 commander(76979) [INFO] initializer.rb:114: DaemonKit (0.1.7.12) booted, now running commander
+2010-03-18 21:00:27.835021 commander(76979) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:00:29.856317 commander(76979) [INFO] initializer.rb:365: Running signal traps for INT
+2010-03-18 21:00:29.858656 commander(76979) [INFO] initializer.rb:71: Running shutdown hooks
+2010-03-18 21:00:29.860007 commander(76979) [WARN] initializer.rb:83: Shutting down commander
+2010-03-18 21:06:25.300023 commander(77045) [INFO] initializer.rb:180: DaemonKit (0.1.7.12) booting in development mode
+2010-03-18 21:06:25.302221 commander(77045) [INFO] initializer.rb:372: Setting up trap for USR1
+2010-03-18 21:06:25.303680 commander(77045) [INFO] initializer.rb:372: Setting up trap for USR2
+2010-03-18 21:06:25.305006 commander(77045) [INFO] initializer.rb:372: Setting up trap for HUP
+2010-03-18 21:06:25.306383 commander(77045) [INFO] initializer.rb:372: Setting up trap for INT
+2010-03-18 21:06:25.307675 commander(77045) [INFO] initializer.rb:372: Setting up trap for TERM
+2010-03-18 21:06:25.316653 commander(77045) [INFO] initializer.rb:114: DaemonKit (0.1.7.12) booted, now running commander
+2010-03-18 21:06:25.318634 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:07:25.321033 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:08:25.325342 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:09:25.329157 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:10:25.331378 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:11:25.333589 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:12:25.336615 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:13:25.339001 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:14:25.375776 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:15:25.378102 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:16:25.380304 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:17:25.388068 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:18:25.390682 commander(77045) [INFO] commander-daemon.rb:16: I'm running
+2010-03-18 21:18:40.370468 commander(77045) [INFO] initializer.rb:365: Running signal traps for INT
+2010-03-18 21:18:40.372918 commander(77045) [INFO] initializer.rb:71: Running shutdown hooks
+2010-03-18 21:18:40.374283 commander(77045) [WARN] initializer.rb:83: Shutting down commander
+2010-03-18 21:18:47.897927 commander(77088) [INFO] initializer.rb:180: DaemonKit (0.1.7.12) booting in development mode
+2010-03-18 21:18:47.901821 commander(77088) [INFO] initializer.rb:372: Setting up trap for USR1
+2010-03-18 21:18:47.903970 commander(77088) [INFO] initializer.rb:372: Setting up trap for USR2
+2010-03-18 21:18:47.905381 commander(77088) [INFO] initializer.rb:372: Setting up trap for HUP
+2010-03-18 21:18:47.906699 commander(77088) [INFO] initializer.rb:372: Setting up trap for INT
+2010-03-18 21:18:47.908153 commander(77088) [INFO] initializer.rb:372: Setting up trap for TERM
+2010-03-18 21:18:47.918394 commander(77088) [INFO] initializer.rb:114: DaemonKit (0.1.7.12) booted, now running commander
+2010-03-18 21:18:48.7415 commander(77088) [INFO] initializer.rb:71: Running shutdown hooks
+2010-03-18 21:18:48.11741 commander(77088) [WARN] initializer.rb:83: Shutting down commander
