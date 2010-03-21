@@ -12,7 +12,6 @@ class Commander < ActiveResource::Base
     
     begin
       self.find(:all, :conditions => { :exitstatus => nil}).each do | item |
-        puts item.inspect
         if running.include? item.id
           DaemonKit.logger.debug "Already running job #{item.id}"
         else
