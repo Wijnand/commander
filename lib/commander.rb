@@ -37,6 +37,10 @@ class Commander < ActiveResource::Base
       DaemonKit.logger.info("Timed out, will try again")
       sleep config['interval']
       retry
+    rescue Exception => e
+      DaemonKit.logger.info("Unknown error: #{e.message}")
+      sleep config['interval']
+      retry
     end
   end
 end
