@@ -33,6 +33,10 @@ class Commander < ActiveResource::Base
       DaemonKit.logger.info("404! It seems you are not pointing me to a compatible REST service")
       sleep config['interval']
       retry
+    rescue ActiveResource::TimeoutError
+      DaemonKit.logger.info("Timed out, will try again")
+      sleep config['interval']
+      retry
     end
   end
 end
