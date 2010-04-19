@@ -18,10 +18,13 @@ class Commander < ActiveResource::Base
           running.push item.id
           DaemonKit.logger.debug "Should run #{item.id}: #{item.command}"
           Process.fork {
-            output=`#{item.command}`
-            item.exitstatus = $?.exitstatus
-            item.output = output
-            item.save
+              Process.fork {
+              output=`#{item.command}`
+              item.exitstatus = $?.exitstatus
+              item.output = output
+              item.save
+            }
+          exit
           }
         end
       end
