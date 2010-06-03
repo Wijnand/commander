@@ -17,15 +17,16 @@ class Commander < ActiveResource::Base
         else
           running.push item.id
           DaemonKit.logger.debug "Should run #{item.id}: #{item.command}"
-          Process.fork {
+          pid = Process.fork {
               Process.fork {
               output=`#{item.command}`
               item.exitstatus = $?.exitstatus
               item.output = output
               item.save
             }
-          exit
+            exit
           }
+          Process.detach pid
         end
       end
     rescue Errno::ECONNREFUSED
