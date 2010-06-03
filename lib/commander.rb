@@ -14,11 +14,12 @@ class Commander < ActiveResource::Base
       self.find(:all, :conditions => { :exitstatus => nil}).each do | item |
         unless running.include? item.id
           running.push item.id
-          DaemonKit.logger.debug "Should run #{item.id}: #{item.command}"
+          DaemonKit.logger.notice "Should run #{item.id}: #{item.command}"
           pid = Process.fork {
               Process.fork {
               output=`#{item.command}`
               item.exitstatus = $?.exitstatus
+              DaemonKit.logger.notice "Exit status #{item.exitstatus} for command #{item.command}"
               item.output = output
               item.save
             }
