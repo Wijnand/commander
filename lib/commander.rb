@@ -12,9 +12,7 @@ class Commander < ActiveResource::Base
     
     begin
       self.find(:all, :conditions => { :exitstatus => nil}).each do | item |
-        if running.include? item.id
-          DaemonKit.logger.debug "Already running job #{item.id}"
-        else
+        unless running.include? item.id
           running.push item.id
           DaemonKit.logger.debug "Should run #{item.id}: #{item.command}"
           pid = Process.fork {
