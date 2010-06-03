@@ -9,6 +9,7 @@ DaemonKit::Application.running! do |config|
   #   # do something clever
   # end
   # config.trap( 'TERM', Proc.new { puts 'Going down' } )
+  $0 = "commander (master)"
 end
 
 # Sample loop to show process
