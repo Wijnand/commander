@@ -20,10 +20,11 @@ class Commander < ActiveResource::Base
               $0.replace = "commander (child) running #{item.command}"
               output=`#{item.command}`
               item.exitstatus = $?.exitstatus
-              DaemonKit.logger.info "Exit status #{item.exitstatus} for command #{item.command}"
               item.output = output
-              until item.save
-                sleep 3
+              saved = false
+              until saved
+                saved = item.save
+                sleep 3 unless saved
               end
             }
             exit
