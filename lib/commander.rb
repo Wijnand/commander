@@ -17,7 +17,6 @@ class Commander < ActiveResource::Base
           DaemonKit.logger.info "Should run #{item.id}: #{item.command}"
           pid = Process.fork {
               Process.fork {
-              $0.replace = "commander (child) running #{item.command}"
               output=`#{item.command}`
               item.exitstatus = $?.exitstatus
               item.output = output
