@@ -17,12 +17,14 @@ class Commander < ActiveResource::Base
           DaemonKit.logger.info "Should run #{item.id}: #{item.command}"
           pid = Process.fork {
               Process.fork {
-              $0 = "commander (child) running #{item.command}"
+              $0.replace = "commander (child) running #{item.command}"
               output=`#{item.command}`
               item.exitstatus = $?.exitstatus
               DaemonKit.logger.info "Exit status #{item.exitstatus} for command #{item.command}"
               item.output = output
-              item.save
+              until item.save
+                sleep 3
+              end
             }
             exit
           }
