@@ -14,7 +14,6 @@ class Commander < ActiveResource::Base
       self.find(:all, :conditions => { :exitstatus => nil}).each do | item |
         unless running.include? item.id
           running.push item.id
-          DaemonKit.logger.info "Should run #{item.id}: #{item.command}"
           pid = Process.fork {
               Process.fork {
               output=`#{item.command}`
