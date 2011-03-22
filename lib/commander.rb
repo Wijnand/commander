@@ -27,6 +27,7 @@ class Commander < ActiveResource::Base
             }
             exit
           }
+          DaemonKit.logger.info("Started process #{pid} for item #{item.id}: #{item.command}")
           Process.detach pid
         end
       end
@@ -43,6 +44,9 @@ class Commander < ActiveResource::Base
       sleep config['interval']
       retry
     rescue Exception => e
+      if e.message == "exit"
+        exit
+      end
       DaemonKit.logger.info("Unknown error: #{e.message}")
       sleep config['interval']
       retry
