@@ -15,14 +15,29 @@ class Commander < ActiveResource::Base
         unless running.include? item.id
           running.push item.id
           pid = Process.fork {
-              Process.fork {
+            Process.fork {
               output=`#{item.command}`
               item.exitstatus = $?.exitstatus
               item.output = output
               saved = false
+              retrytime=2
               until saved
-                saved = item.save
-                sleep 3 unless saved
+                begin
+                  saved = item.save
+                rescue Exception => e
+                    DaemonKit.logger.info("unknown error on save item #{item.id}: #{e}")
+                    if e.message == "exit"
+                      exit
+                    end
+                end
+                if retrytime < 7200
+                  retrytime = retrytime * 2
+                else
+                  DaemonKit.logger.info("Giving up on item #{item.id}") unless saved
+                  saved=true
+                end
+                DaemonKit.logger.info("Save status #{item.exitstatus} for pid #{pid} item #{item.id} failed, retrying") unless saved
+                sleep retrytime unless saved
               end
             }
             exit
@@ -45,6 +60,7 @@ class Commander < ActiveResource::Base
       retry
     rescue Exception => e
       if e.message == "exit"
+        DaemonKit.logger.info("exit message received")
         exit
       end
       DaemonKit.logger.info("Unknown error: #{e.message}")
